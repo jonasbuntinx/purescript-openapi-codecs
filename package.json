@@ -1,0 +1,16 @@
+{
+  "name": "purescript-openapi-codecs",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "spago build",
+    "postinstall": "spago install",
+    "test": "spago test --no-install"
+  },
+  "devDependencies": {
+    "purescript": "^0.14.3",
+    "purescript-psa": "^0.8.2",
+    "purty": "^7.0.0",
+    "spago": "^0.20.3"
+  }
+}
