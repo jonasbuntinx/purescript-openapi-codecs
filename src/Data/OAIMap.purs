@@ -1,4 +1,4 @@
-module Data.OpenApi3.OAIMap where
+module Data.OAIMap where
 
 import Prelude
 import Data.Codec.Argonaut (JsonCodec)

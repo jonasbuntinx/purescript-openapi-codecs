@@ -19,7 +19,7 @@ import Data.Newtype (class Newtype)
 import Data.Profunctor (wrapIso)
 import Data.Symbol (SProxy(..))
 import Data.OpenApi3.MediaType (MediaType, mediaTypeCodec)
-import Data.OpenApi3.OAIMap (OAIMap, _oaiMap, oaiMapCodec)
+import Data.OAIMap (OAIMap, _oaiMap, oaiMapCodec)
 
 newtype RequestBody
   = RequestBody

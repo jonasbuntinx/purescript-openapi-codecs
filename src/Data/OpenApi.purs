@@ -19,7 +19,7 @@ import Data.Newtype (class Newtype)
 import Data.Profunctor (wrapIso)
 import Data.Symbol (SProxy(..))
 import Data.OpenApi3.Components (Components, componentsCodec)
-import Data.OpenApi3.OAIMap (OAIMap, _oaiMap, oaiMapCodec)
+import Data.OAIMap (OAIMap, _oaiMap, oaiMapCodec)
 import Data.OpenApi3.PathItem (PathItem, pathItemCodec)
 import Data.OpenApi3.Server (Server, serverCodec)
 
@@ -27,7 +27,7 @@ newtype OpenApi
   = OpenApi
   { openapi :: String
   -- , info :: Info
-  , paths :: OAIMap PathItem
+  , paths :: OAIMap (ReferenceOr PathItem)
   -- , externalDocs :: Maybe ExternalDocumentation
   , servers :: Maybe (Array Server)
   -- , security :: Maybe (Array (OAIMap (Array String)))
@@ -59,10 +59,10 @@ openApiCodec =
       )
 
 -- Optics
-_paths :: L.Lens' OpenApi (M.Map String PathItem)
+_paths :: L.Lens' OpenApi (M.Map String (ReferenceOr PathItem))
 _paths = _Newtype <<< prop (SProxy :: SProxy "paths") <<< _oaiMap
 
-_pathItem :: String -> L.Traversal' OpenApi PathItem
+_pathItem :: String -> L.Traversal' OpenApi (ReferenceOr PathItem)
 _pathItem key = _paths <<< at key <<< _Just
 
 _servers :: L.Traversal' OpenApi (Array Server)

@@ -10,7 +10,7 @@ import Data.Codec.Argonaut.Record as CAR
 import Data.Maybe (Maybe)
 import Data.Newtype (class Newtype)
 import Data.Profunctor (wrapIso)
-import Data.OpenApi3.OAIMap (OAIMap, oaiMapCodec)
+import Data.OAIMap (OAIMap, oaiMapCodec)
 import Data.OpenApi3.Parameter (Parameter, parameterCodec)
 import Data.OpenApi3.PathItem (PathItem, pathItemCodec)
 import Data.ReferenceOr (ReferenceOr, referenceOrCodec)

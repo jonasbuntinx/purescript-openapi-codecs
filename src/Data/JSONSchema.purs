@@ -24,7 +24,7 @@ import Data.Profunctor (wrapIso)
 import Data.Show.Generic (genericShow)
 import Data.Symbol (SProxy(..))
 import Data.BooleanInt (BooleanInt, booleanIntCodec)
-import Data.OpenApi3.OAIMap (OAIMap, _oaiMap, oaiMapCodec)
+import Data.OAIMap (OAIMap, _oaiMap, oaiMapCodec)
 import Data.Reference (Reference, referenceCodec)
 import Data.ReferenceOr (ReferenceOr, referenceOrCodec)
 

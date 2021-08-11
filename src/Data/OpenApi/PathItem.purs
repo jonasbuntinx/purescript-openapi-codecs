@@ -35,7 +35,6 @@ newtype PathItem
   , head :: Maybe Operation
   , patch :: Maybe Operation
   , trace :: Maybe Operation
-  , _ref :: Maybe String
   }
 
 derive instance newtypePathItem :: Newtype PathItem _
@@ -59,8 +58,6 @@ pathItemCodec =
     >~> CAM.addDefaultField "head" jsonNull
     >~> CAM.addDefaultField "patch" jsonNull
     >~> CAM.addDefaultField "trace" jsonNull
-    >~> CAM.addDefaultField "$ref" jsonNull
-    >~> CAM.renameField "$ref" "_ref"
     >~> codec
   where
   codec =
@@ -78,7 +75,6 @@ pathItemCodec =
           , head: CAC.maybe operationCodec
           , patch: CAC.maybe operationCodec
           , trace: CAC.maybe operationCodec
-          , _ref: CAC.maybe CA.string
           }
       )
 
